@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Typing Text</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        font-family: Arial, sans-serif;
+    }
+
+    #text {
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+        border-right: 3px solid white;
+        padding-right: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+</style>
+</head>
+<body>
+
+<div id="text"></div>
+
+<script>
+const text = "andy";
+let i = 0;
+
+function ketik() {
+    if (i < text.length) {
+        document.getElementById("text").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(ketik, 100);
+    }
+}
+
+ketik();
+</script>
+
+</body>
+</html>
